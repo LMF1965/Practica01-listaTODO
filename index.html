@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pruebas con localstorage</title>
+
+  <link type="text/css" rel="stylesheet" media="screen" href="css/normalize.css" />
+  <link type="text/css" rel="stylesheet" media="screen" href="css/styles.css" />
+  <link type="text/css" rel="stylesheet" media="screen" href="css/fontello.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <main class="container sombra radius5">
+  <h1>Practica 1: Lista TODO</h1>
+    <div class="cabForm sombra radius5">
+      <div class="cabForm__abrir" id="cabForm__abrir">Nueva Tarea<span class="icon-down-dir"></span></div>
+      <div class="cabForm__campos" id="cabForm__campos">
+        <div>
+          <label for="descNuevaTarea">Descripción:</label>
+          <input type="text" id="descNuevaTarea" name="descNuevaTarea"
+                 value="" required>
+          <div class="grabar radius5" id="btn_Guardar"><span class="icon-pencil"></span></br>Guardar</div>
+        </div>
+
+        <div style="margin-top:5px;">
+          <div id="cuadroVerde" class="prioridad verde" data-color="verde">&nbsp;</div>
+          <div id="cuadroAmarillo"class="prioridad amarillo" data-color="amarillo">&nbsp;</div>
+          <div id="cuadroRojo"class="prioridad rojo" data-color="rojo">&nbsp;</div>
+
+          <label for="fechaLimite">Fecha Fin:</label>
+          <input type="date" id="fechaLimite" name="fechaLimite"
+                 value="2018-07-22"
+                 min="2020-01-01"
+                 max="2020-12-31">
+        </div>
+      </div>
+
+    </div>
+
+<input class="oculto" type="text" value"" id="totalTareasCreadas"/>
+<input class="oculto" type="text" value"" id="prioridadMarcada"/>
+  </br>
+    <div class="tareasProgramadas sombra radius5" id="tareasProgramadas">
+      <div class="sinTareas" id="sinTareas">
+        <div>No Existen Tareas Creadas en localStorage</div>
+      </div>
+    </div>
+
+<p>Todas las tareas finalizan a las 23:59:59 de la fecha indicada</p>
+  </main>
+
+
+
+<script src="js/localstorage.js"></script>
+</body>
+</html>
