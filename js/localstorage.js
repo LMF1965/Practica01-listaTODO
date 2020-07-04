@@ -12,7 +12,7 @@ var x = setInterval(function() {
 
 
   arrayClaves.forEach((item, i) => {
-var countDownDate = new Date(arrayFechas[i]+" 23:59:59").getTime();
+var countDownDate = new Date(arrayFechas[i]).getTime();
 
   // Get today's date and time
   var now = new Date().getTime();
@@ -178,7 +178,9 @@ for(var a = 0; a < elementosPrioridad.length; a++ ){
 function creaDIV(nomClave,descTarea,fechaTarea,nivelTarea){
   var nuevaDiv = document.createElement("DIV");
   var nuevoId = nomClave;
-  var fechaFormateada=fechaTarea.substr(8,2)+"/"+fechaTarea.substr(5,2)+"/"+fechaTarea.substr(0,4)+" 23:59:59";
+  var fechaFormateada=fechaTarea.substr(8,2)+"/"+fechaTarea.substr(5,2)+"/"+fechaTarea.substr(0,4)+" 23:59:59";  
+  var fechaFormateada=fechaTarea.substr(8,2)+"/"+fechaTarea.substr(5,2)+"/"+fechaTarea.substr(0,4)+" "+fechaTarea.substr(11,2)+":"+fechaTarea.substr(14,2)+":00";
+  //var fechaFormateada=fechaTarea;
 
   nuevaDiv.setAttribute('class', 'unaTarea radius5 '+ nivelTarea);
   nuevaDiv.setAttribute('id', nuevoId);                    // Create a <p> node
@@ -248,6 +250,25 @@ function crearEventoBotonBorrar(nuevoId){
 }
 
 function fechaHoy(){
-  var f=new Date();
-  document.getElementById("fechaLimite").valueAsDate=f ;
+
+  var hoy = new Date();
+  var dd = hoy.getDate();
+  
+  var mm = hoy.getMonth()+1; 
+  var yyyy = hoy.getFullYear();
+  var hh=hoy.getHours();
+  var mi=hoy.getMinutes();
+  if(dd<10) 
+  {
+      dd='0'+dd;
+  } 
+  
+  if(mm<10) 
+  {
+      mm='0'+mm;
+  } 
+
+  hoy = yyyy+'-'+mm+'-'+dd+"T"+hh+":"+mi+":00";
+  document.getElementById("fechaLimite").value=hoy ;
+  
 }

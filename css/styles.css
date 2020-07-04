@@ -21,7 +21,7 @@ body{
   text-align: center;
 }
 .cabForm{
-  width:375px;
+  width:410px;
   margin: 0 auto;
 
   background: rgba(242,246,248,1);
@@ -58,7 +58,10 @@ body{
     text-align: left;
 }
 #descNuevaTarea{
-    width:200px;
+    width:234px;
+}
+#fechaLimite{
+  width:170px;
 }
 .sinTareas{
   font-size: 1em;
@@ -69,7 +72,7 @@ body{
   height: 43px;
   position: absolute;
   top: 3px;
-  left: 302px;
+  left: 339px;
   text-align: center;
 
   padding: 7px 5px 0 5px;
