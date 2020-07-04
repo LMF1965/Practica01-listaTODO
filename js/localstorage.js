@@ -34,10 +34,10 @@ var countDownDate = new Date(arrayFechas[i]).getTime();
 
   // If the count down is finished, write some text
   if (distance < 0) {
-    document.getElementById(item+"_D").innerHTML= "EX</br>D";
-    document.getElementById(item+"_H").innerHTML="PI</br>H";
-    document.getElementById(item+"_M").innerHTML="RA</br>M";
-    document.getElementById(item+"_S").innerHTML="DA</br>S";
+    document.getElementById(item+"_D").innerHTML= "EX";
+    document.getElementById(item+"_H").innerHTML="PI";
+    document.getElementById(item+"_M").innerHTML="RA";
+    document.getElementById(item+"_S").innerHTML="DA";
   }
 
   });//fin del bucle de recorrer arrays
